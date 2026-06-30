@@ -4,7 +4,7 @@ function ReservationTable() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3002/api/reservations")
+    fetch("https://room-reservation-system-production.up.railway.app/api/reservations")
       .then(res => res.json())
       .then(data => setReservations(data))
       .catch(err => console.error(err));

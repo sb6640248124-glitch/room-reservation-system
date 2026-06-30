@@ -4,7 +4,7 @@ function Header({ onLogout }) {
       <div className="logo">🏫 ระบบจองห้อง</div>
       <button onClick={() => {
   localStorage.removeItem("user");
-  window.location.href = "/login";
+  window.location.href = "/";
 }}>
   เข้าสู่ระบบ
 </button>

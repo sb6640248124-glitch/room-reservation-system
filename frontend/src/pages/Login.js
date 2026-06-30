@@ -14,7 +14,7 @@ function Login() {
     }
 
     try {
-      const res = await fetch("http://localhost:3002/api/login", {
+      const res = await fetch("https://room-reservation-system-production.up.railway.app/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

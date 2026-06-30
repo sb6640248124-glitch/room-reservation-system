@@ -4,7 +4,7 @@ import axios from "axios";
 import Calendar from "../components/Calendar";
 import "./Home.css";
 
-const apiBaseUrl = "http://localhost:3002/api";
+const apiBaseUrl = "https://room-reservation-system-production.up.railway.app/api";
 
 const todayInputValue = () => new Date().toISOString().slice(0, 10);
 

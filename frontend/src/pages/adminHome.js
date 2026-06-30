@@ -205,7 +205,7 @@ function Home() {
   });
 
 //   useEffect(() => {
-//   axios.get("http://localhost:3002/api/ReservationTable")
+//   axios.get("https://room-reservation-system-production.up.railway.app/api/ReservationTable")
 //     .then(res => setReservations(res.data))
 //     .catch(err => console.error(err));
 // }, []);
@@ -231,11 +231,11 @@ useEffect(() => {
     try {
       const [scheduleRes, reservationRes, roomRes, buildingRes, roomTypeRes] =
         await Promise.all([
-          axios.get("http://localhost:3002/api/schedules"),
-          axios.get("http://localhost:3002/api/reservations?active_only=1"),
-          axios.get("http://localhost:3002/api/rooms"),
-          axios.get("http://localhost:3002/api/buildings"),
-          axios.get("http://localhost:3002/api/room-types"),
+          axios.get("https://room-reservation-system-production.up.railway.app/api/schedules"),
+          axios.get("https://room-reservation-system-production.up.railway.app/api/reservations?active_only=1"),
+          axios.get("https://room-reservation-system-production.up.railway.app/api/rooms"),
+          axios.get("https://room-reservation-system-production.up.railway.app/api/buildings"),
+          axios.get("https://room-reservation-system-production.up.railway.app/api/room-types"),
         ]);
 
       setSchedules(scheduleRes.data);
@@ -351,7 +351,7 @@ useEffect(() => {
       });
 
       const res = await axios.get(
-        `http://localhost:3002/api/rooms/available?${params.toString()}`
+        `https://room-reservation-system-production.up.railway.app/api/rooms/available?${params.toString()}`
       );
 
       setAvailableRooms(res.data);
@@ -393,7 +393,7 @@ useEffect(() => {
     }
 
     const res = await axios.get(
-      `http://localhost:3002/api/rooms/available?${params.toString()}`
+      `https://room-reservation-system-production.up.railway.app/api/rooms/available?${params.toString()}`
     );
 
     return res.data;
@@ -614,7 +614,7 @@ useEffect(() => {
       setBookingError("");
       setBookingSuccess("");
 
-      await axios.post("http://localhost:3002/api/reservations", {
+      await axios.post("https://room-reservation-system-production.up.railway.app/api/reservations", {
         user_id: user.user_id,
         room_id: bookingForm.room_id,
         start_date: selectedDate,
@@ -628,7 +628,7 @@ useEffect(() => {
       setBookingSuccess("ส่งคำขอจองห้องสำเร็จ");
       setBookingForm((current) => ({ ...current, purpose: "", user_amount: 1 }));
 
-      const reservationRes = await axios.get("http://localhost:3002/api/reservations?active_only=1");
+      const reservationRes = await axios.get("https://room-reservation-system-production.up.railway.app/api/reservations?active_only=1");
       setReservations(reservationRes.data);
       await loadDateAvailability(selectedDate);
     } catch (err) {

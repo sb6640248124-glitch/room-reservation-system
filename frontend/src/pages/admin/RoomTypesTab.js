@@ -12,7 +12,7 @@ function RoomTypesTab() {
   }, []);
 
   const loadRoomTypes = async () => {
-    const res = await axios.get("http://localhost:3002/api/room-types");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/room-types");
     setRoomTypes(res.data);
   };
 
@@ -33,7 +33,7 @@ function RoomTypesTab() {
     const nextStatus = currentStatus === "ใช้งาน" ? "ปิดใช้งาน" : "ใช้งาน";
 
     await axios.put(
-      `http://localhost:3002/api/room-types/${roomType.room_type_id}`,
+      `https://room-reservation-system-production.up.railway.app/api/room-types/${roomType.room_type_id}`,
       { room_type_status: nextStatus }
     );
 
@@ -49,11 +49,11 @@ function RoomTypesTab() {
     }
 
     if (mode === "edit") {
-      await axios.put(`http://localhost:3002/api/room-types/${editId}`, {
+      await axios.put(`https://room-reservation-system-production.up.railway.app/api/room-types/${editId}`, {
         room_type_name: name.trim(),
       });
     } else {
-      await axios.post("http://localhost:3002/api/room-types", {
+      await axios.post("https://room-reservation-system-production.up.railway.app/api/room-types", {
         room_type_name: name.trim(),
       });
     }

@@ -26,17 +26,17 @@ function RoomsTab() {
   }, []);
 
   const fetchRooms = async () => {
-    const res = await axios.get("http://localhost:3002/api/rooms");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/rooms");
     setRooms(res.data);
   };
 
   const fetchBuildings = async () => {
-    const res = await axios.get("http://localhost:3002/api/buildings");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/buildings");
     setBuildings(res.data);
   };
 
   const fetchRoomTypes = async () => {
-    const res = await axios.get("http://localhost:3002/api/room-types");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/room-types");
     setRoomTypes(res.data);
   };
 
@@ -68,7 +68,7 @@ function RoomsTab() {
   };
 
   const toggleStatus = async (room) => {
-    await axios.put(`http://localhost:3002/api/rooms/${room.room_id}/status`, {
+    await axios.put(`https://room-reservation-system-production.up.railway.app/api/rooms/${room.room_id}/status`, {
       status: room.status === "ใช้งาน" ? "ปิดใช้งาน" : "ใช้งาน",
     });
 
@@ -103,9 +103,9 @@ function RoomsTab() {
     };
 
     if (mode === "edit") {
-      await axios.put(`http://localhost:3002/api/rooms/${editId}`, payload);
+      await axios.put(`https://room-reservation-system-production.up.railway.app/api/rooms/${editId}`, payload);
     } else {
-      await axios.post("http://localhost:3002/api/rooms", payload);
+      await axios.post("https://room-reservation-system-production.up.railway.app/api/rooms", payload);
     }
 
     resetForm();

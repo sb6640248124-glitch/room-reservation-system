@@ -18,7 +18,7 @@ function VerifyEmail() {
     }
 
     axios
-      .get(`http://localhost:3002/api/verify-email?token=${token}`)
+      .get(`https://room-reservation-system-production.up.railway.app/api/verify-email?token=${token}`)
       .then((res) => {
         setIsSuccess(true);
         setMessage(res.data.message);

@@ -28,7 +28,7 @@ function Register() {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://localhost:3002/api/register", {
+      const res = await axios.post("https://room-reservation-system-production.up.railway.app/api/register", {
         name,
         email,
         password,

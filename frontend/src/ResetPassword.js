@@ -32,7 +32,7 @@ function ResetPassword() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:3002/api/reset-password",
+        "https://room-reservation-system-production.up.railway.app/api/reset-password",
         { token, password }
       );
       setMessage(res.data.message);

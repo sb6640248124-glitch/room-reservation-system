@@ -20,17 +20,17 @@ function ScheduleTab() {
   }, []);
 
   const fetchSchedules = async () => {
-    const res = await axios.get("http://localhost:3002/api/schedules");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/schedules");
     setSchedules(res.data);
   };
 
   const fetchRooms = async () => {
-    const res = await axios.get("http://localhost:3002/api/rooms");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/rooms");
     setRooms(res.data);
   };
 
   const handleAdd = async () => {
-    await axios.post("http://localhost:3002/api/schedules", {
+    await axios.post("https://room-reservation-system-production.up.railway.app/api/schedules", {
       ...newSchedule,
       room_id: Number(newSchedule.room_id),
     });
@@ -48,7 +48,7 @@ function ScheduleTab() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3002/api/schedules/${id}`);
+    await axios.delete(`https://room-reservation-system-production.up.railway.app/api/schedules/${id}`);
     fetchSchedules();
   };
 

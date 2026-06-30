@@ -28,7 +28,7 @@ function UserManage() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3002/api/users");
+      const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/users");
       setUsers(res.data);
     } catch (err) {
       console.error("โหลดข้อมูลผู้ใช้ไม่สำเร็จ", err);
@@ -44,7 +44,7 @@ function UserManage() {
     if (!confirmed) return;
 
     try {
-      await axios.put(`http://localhost:3002/api/users/${user.user_id}/role`, {
+      await axios.put(`https://room-reservation-system-production.up.railway.app/api/users/${user.user_id}/role`, {
         role: nextRole,
       });
 
@@ -82,7 +82,7 @@ function UserManage() {
 
     try {
       setSaving(true);
-      const res = await axios.post("http://localhost:3002/api/users", newUser);
+      const res = await axios.post("https://room-reservation-system-production.up.railway.app/api/users", newUser);
       setUsers((current) => [res.data.user, ...current]);
       closeAddForm(true);
     } catch (err) {
@@ -100,7 +100,7 @@ function UserManage() {
       setPasswordUser(user);
 
       const res = await axios.get(
-        `http://localhost:3002/api/users/${user.user_id}`
+        `https://room-reservation-system-production.up.railway.app/api/users/${user.user_id}`
       );
       setPasswordValue(res.data.password || "");
     } catch (err) {
@@ -132,7 +132,7 @@ function UserManage() {
       setPasswordLoading(true);
       setPasswordError("");
       await axios.put(
-        `http://localhost:3002/api/users/${passwordUser.user_id}/password`,
+        `https://room-reservation-system-production.up.railway.app/api/users/${passwordUser.user_id}/password`,
         { password: passwordValue }
       );
       closePasswordForm(true);

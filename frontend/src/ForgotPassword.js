@@ -20,7 +20,7 @@ function ForgotPassword() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:3002/api/forgot-password",
+        "https://room-reservation-system-production.up.railway.app/api/forgot-password",
         { email }
       );
       setMessage(res.data.message);

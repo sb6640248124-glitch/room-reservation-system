@@ -25,14 +25,14 @@ function AdminSchedule() {
 
   /* ================= FETCH BUILDINGS ================= */
   useEffect(() => {
-    axios.get("http://localhost:3002/api/buildings")
+    axios.get("https://room-reservation-system-production.up.railway.app/api/buildings")
       .then(res => setBuildings(res.data))
       .catch(err => console.error(err));
   }, []);
 
   /* ================= FETCH ROOMS ================= */
   useEffect(() => {
-    axios.get("http://localhost:3002/api/rooms")
+    axios.get("https://room-reservation-system-production.up.railway.app/api/rooms")
       .then(res => setRooms(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -40,7 +40,7 @@ function AdminSchedule() {
   /* ================= FETCH SCHEDULES ================= */
   const fetchSchedules = async () => {
     try {
-      const res = await axios.get("http://localhost:3002/api/schedules");
+      const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/schedules");
 
       const formatted = res.data.map(item => ({
         id: item.schedule_id,
@@ -107,7 +107,7 @@ function AdminSchedule() {
 
     try {
       await axios.post(
-        "http://localhost:3002/api/schedules",
+        "https://room-reservation-system-production.up.railway.app/api/schedules",
         {
           ...formData,
           building_id: Number(formData.building_id),

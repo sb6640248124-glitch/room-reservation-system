@@ -16,7 +16,7 @@ function BuildingsTab() {
   }, []);
 
   const loadBuildings = async () => {
-    const res = await axios.get("http://localhost:3002/api/buildings");
+    const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/buildings");
     setBuildings(res.data);
   };
 
@@ -37,7 +37,7 @@ function BuildingsTab() {
       building.building_status === "ใช้งาน" ? "ปิดใช้งาน" : "ใช้งาน";
 
     await axios.put(
-      `http://localhost:3002/api/buildings/${building.building_id}`,
+      `https://room-reservation-system-production.up.railway.app/api/buildings/${building.building_id}`,
       { building_status: newStatus }
     );
 
@@ -53,11 +53,11 @@ function BuildingsTab() {
     }
 
     if (mode === "edit") {
-      await axios.put(`http://localhost:3002/api/buildings/${editId}`, {
+      await axios.put(`https://room-reservation-system-production.up.railway.app/api/buildings/${editId}`, {
         building_name: form.building_name.trim(),
       });
     } else {
-      await axios.post("http://localhost:3002/api/buildings", {
+      await axios.post("https://room-reservation-system-production.up.railway.app/api/buildings", {
         building_name: form.building_name.trim(),
       });
     }

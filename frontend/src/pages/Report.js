@@ -3,7 +3,7 @@ import axios from "axios";
 import MainMenuTabs from "../components/MainMenuTabs";
 import "./Report.css";
 
-const apiBaseUrl = "http://localhost:3002/api";
+const apiBaseUrl = "https://room-reservation-system-production.up.railway.app/api";
 
 const statusConfig = {
   pending: { label: "ยังไม่ส่งเอกสาร", className: "pending" },

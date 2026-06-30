@@ -28,7 +28,7 @@ function Profile() {
         setLoading(true);
         setError("");
 
-        const res = await fetch(`http://localhost:3002/api/users/${storedUser.user_id}`);
+        const res = await fetch(`https://room-reservation-system-production.up.railway.app/api/users/${storedUser.user_id}`);
         const data = await res.json();
 
         if (!res.ok) {
@@ -71,7 +71,7 @@ function Profile() {
       setMessage("");
 
       const res = await fetch(
-        `http://localhost:3002/api/users/${storedUser.user_id}/profile`,
+        `https://room-reservation-system-production.up.railway.app/api/users/${storedUser.user_id}/profile`,
         {
           method: "PUT",
           headers: {

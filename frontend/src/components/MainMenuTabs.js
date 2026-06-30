@@ -8,7 +8,7 @@ function MainMenuTabs() {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    navigate("/login");
+    navigate("/", { replace: true });
   };
 
   return (

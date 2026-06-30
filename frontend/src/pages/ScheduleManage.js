@@ -224,13 +224,13 @@ function ScheduleManage() {
   }, []);
 
   const fetchSchedules = async () => {
-    const res = await fetch("http://localhost:3002/api/schedules");
+    const res = await fetch("https://room-reservation-system-production.up.railway.app/api/schedules");
     const data = await res.json();
     setSchedules(Array.isArray(data) ? data : []);
   };
 
   const fetchBuildings = async () => {
-    const res = await fetch("http://localhost:3002/api/buildings");
+    const res = await fetch("https://room-reservation-system-production.up.railway.app/api/buildings");
     const data = await res.json();
     setBuildings(Array.isArray(data) ? data : []);
   };
@@ -242,7 +242,7 @@ function ScheduleManage() {
     }
 
     const res = await fetch(
-      `http://localhost:3002/api/rooms/by-building/${buildingId}`
+      `https://room-reservation-system-production.up.railway.app/api/rooms/by-building/${buildingId}`
     );
     const data = await res.json();
     const nextRooms = Array.isArray(data) ? data : [];
@@ -313,7 +313,7 @@ function ScheduleManage() {
   const handleDelete = async (id) => {
     if (!window.confirm("ต้องการลบตารางเรียนนี้ใช่ไหม")) return;
 
-    await fetch(`http://localhost:3002/api/schedules/${id}`, {
+    await fetch(`https://room-reservation-system-production.up.railway.app/api/schedules/${id}`, {
       method: "DELETE",
     });
 
@@ -358,8 +358,8 @@ function ScheduleManage() {
 
     const url =
       mode === "edit"
-        ? `http://localhost:3002/api/schedules/${editId}`
-        : "http://localhost:3002/api/schedules";
+        ? `https://room-reservation-system-production.up.railway.app/api/schedules/${editId}`
+        : "https://room-reservation-system-production.up.railway.app/api/schedules";
 
     await fetch(url, {
       method: mode === "edit" ? "PUT" : "POST",

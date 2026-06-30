@@ -20,7 +20,7 @@
 //   // ============================
 //   const fetchSchedules = async () => {
 //     try {
-//       const res = await axios.get("http://localhost:3002/api/schedules");
+//       const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/schedules");
 //       setSchedules(res.data);
 //     } catch (err) {
 //       console.error("โหลด schedules ไม่สำเร็จ:", err);
@@ -32,7 +32,7 @@
 //   // ============================
 //   const fetchBuildings = async () => {
 //     try {
-//       const res = await axios.get("http://localhost:3002/api/buildings");
+//       const res = await axios.get("https://room-reservation-system-production.up.railway.app/api/buildings");
 //       setBuildings(res.data);
 //     } catch (err) {
 //       console.error("โหลด buildings ไม่สำเร็จ:", err);
@@ -49,7 +49,7 @@
 //       console.log("กำลังดึงห้องของอาคาร:", id);
 
 //       const res = await axios.get(
-//         `http://localhost:3002/api/rooms/by-building/${id}`
+//         `https://room-reservation-system-production.up.railway.app/api/rooms/by-building/${id}`
 //       );
 
 //       console.log("rooms ที่ได้:", res.data);
@@ -73,7 +73,7 @@
 //     e.preventDefault();
 
 //     try {
-//       await axios.post("http://localhost:3002/api/schedules", {
+//       await axios.post("https://room-reservation-system-production.up.railway.app/api/schedules", {
 //         room_id,
 //         subject_name,
 //         instructor,

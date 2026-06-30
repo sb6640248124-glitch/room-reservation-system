@@ -83,8 +83,8 @@ function ReservationList() {
         setError("");
 
         const reservationUrl = isAdmin
-          ? "http://localhost:3002/api/reservations"
-          : `http://localhost:3002/api/reservations?user_id=${user.user_id}`;
+          ? "https://room-reservation-system-production.up.railway.app/api/reservations"
+          : `https://room-reservation-system-production.up.railway.app/api/reservations?user_id=${user.user_id}`;
 
         const res = await fetch(reservationUrl);
         const data = await res.json();
@@ -125,7 +125,7 @@ function ReservationList() {
 
     try {
       const res = await fetch(
-        `http://localhost:3002/api/reservations/${reservationId}/cancel`,
+        `https://room-reservation-system-production.up.railway.app/api/reservations/${reservationId}/cancel`,
         {
           method: "PUT",
           headers: {
@@ -164,7 +164,7 @@ function ReservationList() {
 
     try {
       const res = await fetch(
-        `http://localhost:3002/api/reservations/${reservationId}/status`,
+        `https://room-reservation-system-production.up.railway.app/api/reservations/${reservationId}/status`,
         {
           method: "PUT",
           headers: {
