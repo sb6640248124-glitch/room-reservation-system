@@ -1,0 +1,136 @@
+.day-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f3f5;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.day-circle:hover {
+  background: #e0e7ff;
+}
+
+.day-circle.active {
+  background: #4f46e5;
+  color: white;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.4);
+}
+
+/* Overlay */
+.custom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal box */
+.custom-modal {
+  background: #ffffff;
+  width: 520px;
+  max-width: 95%;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.repeat-card {
+  background: #f9fafc;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.btn-primary {
+  background: #4f46e5;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 18px;
+}
+
+.btn-primary:hover {
+  background: #4338ca;
+}
+
+.btn-secondary {
+  border-radius: 10px;
+  padding: 8px 18px;
+}
+
+.schedule-admin-container {
+  margin-top: 20px;
+}
+
+.repeat-custom-box {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  margin: 4px 0 12px;
+  border: 1px solid #dbe4f0;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.repeat-day-picker {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(32px, 1fr));
+  gap: 6px;
+}
+
+.repeat-day-picker button {
+  min-height: 34px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.repeat-day-picker button.active {
+  border-color: #ff9400;
+  background: #ff9400;
+  color: #ffffff;
+}
+
+.time-24-control {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-24-control select {
+  min-width: 0;
+}
+
+.time-24-control span {
+  color: #475569;
+  font-weight: 800;
+  text-align: center;
+}

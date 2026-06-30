@@ -1,0 +1,135 @@
+.profile-page {
+  min-height: 100vh;
+  background: #f6f7fb;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.profile-shell {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 18px 0 42px;
+}
+
+.profile-header {
+  margin-bottom: 18px;
+}
+
+.profile-header p {
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.profile-header h1 {
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.profile-header span {
+  display: block;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  padding: 22px;
+}
+
+.profile-card label {
+  color: #374151;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.profile-card input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 7px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #111827;
+  font-size: 15px;
+  padding: 11px 12px;
+}
+
+.profile-card input:focus {
+  outline: none;
+  border-color: #f97316;
+  background: #ffffff;
+}
+
+.profile-card input[readonly] {
+  background: #eef2f7;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.profile-message {
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+}
+
+.profile-message.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.profile-message.success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-actions button {
+  min-height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #f97316;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 18px;
+}
+
+.profile-actions button:disabled {
+  background: #fdba74;
+  cursor: wait;
+}
+
+.profile-state {
+  color: #6b7280;
+  padding: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 540px) {
+  .profile-shell {
+    width: calc(100% - 24px);
+  }
+
+  .profile-card {
+    padding: 16px;
+  }
+
+  .profile-actions button {
+    width: 100%;
+  }
+}

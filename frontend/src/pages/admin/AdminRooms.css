@@ -1,0 +1,227 @@
+/* ===== Layout ===== */
+.admin-container {
+  background: #eef3ff;
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* ===== Tabs ===== */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #dde7ff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tab.active {
+  background: white;
+  border-bottom: 3px solid orange;
+}
+
+/* ===== Card ===== */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== Table ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #ffe6bf;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+}
+
+.table tr:not(:last-child) td {
+  border-bottom: 1px solid #eee;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ===== Button ===== */
+.btn-edit {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background: #ff8c00;
+}
+
+.admin-page {
+  padding: 30px;
+}
+
+.content-box {
+  background: #eef3ff;
+  border-radius: 18px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.btn-edit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-enable {
+  background: #28a745;
+  color: white;
+}
+
+.btn-disable {
+  background: #dc3545;
+  color: white;
+}
+
+.admin-manage-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.admin-side-form,
+.admin-table-panel {
+  background: #ffffff;
+  border: 1px solid #dbe3f4;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.side-form-header h3 {
+  color: #111827;
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.side-form-header p {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+
+.admin-side-form label {
+  color: #374151;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.admin-side-form input,
+.admin-side-form select,
+.admin-side-form textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  margin-top: 7px;
+  padding: 9px 10px;
+}
+
+.admin-side-form input:focus,
+.admin-side-form select:focus,
+.admin-side-form textarea:focus {
+  border-color: #ff9800;
+  outline: none;
+}
+
+.admin-side-form textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+.side-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.btn-save,
+.btn-cancel {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 9px 12px;
+}
+
+.btn-save {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.btn-cancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.admin-table-panel {
+  overflow-x: auto;
+}
+
+.admin-table-panel td button {
+  margin-right: 6px;
+}
+
+.equipment-cell {
+  color: #475569;
+  max-width: 220px;
+  white-space: normal;
+}
+
+.table-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.table-toolbar select {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  min-width: 220px;
+  padding: 8px 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .admin-manage-layout {
+    grid-template-columns: 1fr;
+  }
+}
